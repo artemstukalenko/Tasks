@@ -31,5 +31,13 @@ public class TestGame {
         Assert.assertTrue(upperBound <= 100 && upperBound > model.getLowerBound());
     }
 
-
+    @Test
+    public void testAttemptsUniqueness() {
+        for(int attempt : model.getUserAttempts()) {
+            for (int check : model.getUserAttempts()) {
+                System.out.println("attempt = " + attempt + "; check = " + check);
+                Assert.assertFalse(attempt == check);
+            }
+        }
+    }
 }
