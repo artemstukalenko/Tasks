@@ -11,7 +11,7 @@ public class Model {
 
     private static int generateSoughtNumber() {
         Random r = new Random();
-        return r.nextInt(101);
+        return r.nextInt(100);
     }
 
     public void setPrimaryBounds(int lowerBound, int upperBound){

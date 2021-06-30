@@ -3,7 +3,7 @@ package p1;
 import java.util.ArrayList;
 
 public class View {
-    public static final String GREETING = "I made a number in range between 0 and 100 inclusive. Try to guess it!";
+    public static final String GREETING = "I made a number in range between 0 and 100. Try to guess it!";
     public static final String INPUT_FIELD = "Type in a number between ";
     public static final String AND = " and ";
     public static final String WRONG_INPUT = "Wrong input! Try again!";
