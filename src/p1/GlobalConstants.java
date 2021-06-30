@@ -1,6 +1,6 @@
 package p1;
 
 public interface GlobalConstants {
-    int PRIMARY_MIN_BARRIER = 0;
-    int PRIMARY_MAX_BARRIER = 100;
+    int PRIMARY_LOWER_BOUND = 0;
+    int PRIMARY_UPPER_BOUND = 100;
 }

@@ -15,6 +15,9 @@ public class Controller {
     public void processUser() {
         Scanner sc = new Scanner(System.in);
 
+        MODEL.setPrimaryBounds(GlobalConstants.PRIMARY_LOWER_BOUND,
+                                GlobalConstants.PRIMARY_UPPER_BOUND);
+
         VIEW.printMessage(View.GREETING);
 
         do {

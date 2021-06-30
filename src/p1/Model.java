@@ -5,13 +5,18 @@ import java.util.*;
 public class Model {
 
     private final int SOUGHT_NUMBER = generateSoughtNumber();
-    private int lowerBound = 0;
-    private int upperBound = 100;
+    private int lowerBound;
+    private int upperBound;
     private ArrayList <Integer> userAttempts = new ArrayList<>(); //stores all correct user attempts
 
     private static int generateSoughtNumber() {
         Random r = new Random();
         return r.nextInt(101);
+    }
+
+    public void setPrimaryBounds(int lowerBound, int upperBound){
+        this.lowerBound = lowerBound;
+        this.upperBound = upperBound;
     }
 
     public int getSoughtNumber() {
