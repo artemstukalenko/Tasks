@@ -41,9 +41,14 @@ public class Controller {
             VIEW.printAttempts(MODEL.getUserAttempts(), View.ATTEMPT_STATISTICS);
             VIEW.printMessage(View.FRAME);
         } else {
-            MODEL.updateAttempts(currentAttempt);
-            VIEW.printAttempts(MODEL.getUserAttempts(), View.PREVIOUS_ATTEMPTS);
-            VIEW.printRangeMessage(View.INPUT_FIELD, MODEL.getLowerBound(), View.AND, MODEL.getUpperBound());
+            if (!isBoundEqual(currentAttempt)) {
+                MODEL.updateAttempts(currentAttempt);
+                VIEW.printAttempts(MODEL.getUserAttempts(), View.PREVIOUS_ATTEMPTS);
+                VIEW.printRangeMessage(View.INPUT_FIELD, MODEL.getLowerBound(), View.AND, MODEL.getUpperBound());
+            } else {
+                VIEW.printMessage(View.WRONG_INPUT);
+                VIEW.printRangeMessage(View.INPUT_FIELD, MODEL.getLowerBound(), View.AND, MODEL.getUpperBound());
+            }
         }
     }
 
@@ -76,5 +81,10 @@ public class Controller {
 
     private boolean isUnique(int attempt) {
         return !MODEL.getUserAttempts().contains(attempt);
+    }
+
+    private boolean isBoundEqual(int currentAttempt) {
+        return currentAttempt == GlobalConstants.PRIMARY_UPPER_BOUND
+                || currentAttempt == GlobalConstants.PRIMARY_LOWER_BOUND;
     }
 }
